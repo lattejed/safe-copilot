@@ -16,6 +16,7 @@ docker-remove-persistence:
 docker-build:
   docker build --tag safe-copilot .
 
+[no-cd]
 docker-run:
   #!/bin/bash
   export $(cat .env | xargs)

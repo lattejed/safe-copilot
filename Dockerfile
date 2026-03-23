@@ -9,7 +9,14 @@ RUN apt-get update && apt-get install -y \
   curl \
   gpg \
   git \
+  vim \
+  locales \
+  && locale-gen C.UTF-8 \
+  && update-locale LANG=C.UTF-8 LC_ALL=C.UTF-8 \
   && rm -rf /var/lib/apt/lists/*
+
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
 
 # ARG for the Copilot CLI version - passed from build process
 # This ensures cache invalidation when a new version is available

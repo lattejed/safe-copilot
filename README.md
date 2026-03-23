@@ -7,13 +7,5 @@ Run `just docker-build` to build the Docker image.
 Add the following to `~/.zshrc`:
 
 ```bash
-copilot () {
-  export $(cat $HOME/Developer/<user>/safe-copilot/.env | xargs) # should contain COPILOT_GITHUB_TOKEN
-  docker run -it --rm \
-    -v safe-copilot-persistence:/copilot-home \
-    -v "$(pwd)":/workspace:ro \
-    -e COPILOT_HOME=/copilot-home \
-    -e COPILOT_GITHUB_TOKEN=${COPILOT_GITHUB_TOKEN} \
-    safe-copilot:latest
-}
+alias copilot="just $HOME/<dir>/safe-copilot/docker-run"
 ```
