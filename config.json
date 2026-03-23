@@ -1,0 +1,5 @@
+{
+  "trusted_folders": ["/workspace"],
+  "auto_update": false,
+  "model": "claude-sonnet-4.6"
+}
