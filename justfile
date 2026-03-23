@@ -19,7 +19,7 @@ docker-build:
 [no-cd]
 docker-run:
   #!/bin/bash
-  export $(cat .env | xargs)
+  export $(cat $HOME/Developer/lattejed/safe-copilot/.env | xargs)
   docker run -it --rm \
     -v safe-copilot-persistence:/copilot-home \
     -v "$(pwd)":/workspace:ro \
