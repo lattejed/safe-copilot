@@ -13,6 +13,9 @@ docker-setup-persistence:
 docker-remove-persistence:
   docker volume rm safe-copilot-persistence
 
+docker-shell-persistence:
+  docker run --rm -it -v safe-copilot-persistence:/data alpine sh
+
 docker-build:
   docker build --tag safe-copilot .
 
