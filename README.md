@@ -13,11 +13,11 @@ copilot:
   docker run -it --rm \
     -v safe-copilot-persistence:/copilot-home \
     -v "$(pwd)":/workspace:ro \
-    -v /dev/null:.secrets \
-    -v "$(pwd)/secretdir" \
+    -v /dev/null:/workspace/.secrets \
+    -v /workspace/secretdir \
     -e COPILOT_HOME=/copilot-home \
     -e COPILOT_GITHUB_TOKEN=${COPILOT_GITHUB_TOKEN} \
     safe-copilot:latest
 ```
 
-Use `-v /dev/null:.secretfile` and `-v "$(pwd)/secretdir"` to prevent the container from accessing sensitive files on your host machine. These have to come after other bindings to ensure they take precedence.
+Use `-v /dev/null:/workspace/.secrets` and `-v /workspace/secretdir` to prevent the container from accessing sensitive files on your host machine. These **MUST** come after the read-only mount of your project directory to take precedence.
