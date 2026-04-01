@@ -18,14 +18,3 @@ docker-shell-persistence:
 
 docker-build:
   docker build --tag safe-copilot .
-
-[no-cd]
-docker-run:
-  #!/bin/bash
-  export $(cat $HOME/Developer/lattejed/safe-copilot/.env | xargs)
-  docker run -it --rm \
-    -v safe-copilot-persistence:/copilot-home \
-    -v "$(pwd)":/workspace:ro \
-    -e COPILOT_HOME=/copilot-home \
-    -e COPILOT_GITHUB_TOKEN=${COPILOT_GITHUB_TOKEN} \
-    safe-copilot:latest
