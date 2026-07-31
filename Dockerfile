@@ -32,8 +32,8 @@ WORKDIR /workspace
 COPY entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
-# Copy the default configuration file for Copilot CLI.
-COPY config.json /root/.copilot/config.json
+# Copy the default settings file for Copilot CLI.
+COPY settings.json /root/.copilot/settings.json
 
 # Label for image cleanup
 LABEL project="safe-copilot"

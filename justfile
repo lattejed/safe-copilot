@@ -6,9 +6,9 @@ docker-setup-persistence:
   docker volume create safe-copilot-persistence
   docker run --rm \
     -v safe-copilot-persistence:/data \
-    -v ./config.json:/config.json:ro \
+    -v ./settings.json:/settings.json:ro \
     alpine:latest \
-    sh -c "cp /config.json /data/config.json && chmod 644 /data/config.json"
+    sh -c "cp /settings.json /data/settings.json && chmod 644 /data/settings.json"
 
 docker-remove-persistence:
   docker volume rm safe-copilot-persistence
