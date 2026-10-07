@@ -1,5 +1,7 @@
 {
-  "trusted_folders": ["/workspace"],
+  "trusted_folders": [
+    "/workspace"
+  ],
   "auto_update": false,
-  "model": "claude-sonnet-5"
+  "model": "grok-4.7"
 }
